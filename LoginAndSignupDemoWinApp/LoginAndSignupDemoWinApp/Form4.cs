@@ -39,15 +39,15 @@ namespace LoginAndSignupDemoWinApp
             da.Fill(dt);
             cmb_usnm.DisplayMember = "username";
             cmb_usnm.ValueMember = "Id";
-            cmb_usnm.DataSource = dt.Rows[0][2].ToString();
+            cmb_usnm.DataSource = dt;
         }
 
         private void cmb_usnm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            da = new SqlDataAdapter("SELECT * FROM users WHERE Id = "+cmb_usnm.ValueMember+"", conn);
+            da = new SqlDataAdapter("SELECT * FROM users WHERE Id = "+cmb_usnm.SelectedValue+"", conn);
             dt = new DataTable();
             da.Fill(dt);
-            cmb_usnm.SelectedIndex = 0;
+            lbl_pass.Text = dt.Rows[0][2].ToString();
         }
     }
 }
