@@ -55,5 +55,17 @@ namespace LoginAndSignupDemoWinApp
                 MessageBox.Show("Data Not Exist");
             }
         }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Form3 frm3 = new Form3();
+            frm3.Show();
+        }
+
+        private void btn_show_Click(object sender, EventArgs e)
+        {
+            Form4 frm4 = new Form4();
+            frm4.Show();
+        }
     }
 }

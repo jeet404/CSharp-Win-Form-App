@@ -12,3 +12,5 @@ C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWi
 C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\obj\Debug\LoginAndSignupDemoWinApp.csproj.CoreCompileInputs.cache
 C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\obj\Debug\LoginAndSignupDemoWinApp.exe
 C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\obj\Debug\LoginAndSignupDemoWinApp.pdb
+C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\obj\Debug\LoginAndSignupDemoWinApp.Form3.resources
+C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\obj\Debug\LoginAndSignupDemoWinApp.Form4.resources
