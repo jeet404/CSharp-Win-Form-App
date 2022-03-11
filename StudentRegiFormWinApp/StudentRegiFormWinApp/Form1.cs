@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace StudentRegiFormWinApp
 {
@@ -38,13 +39,15 @@ namespace StudentRegiFormWinApp
         private void check_hb()
         {
             strhb = "";
+            ArrayList al = new ArrayList();
             foreach (var checkedItem in this.chkbl_hb.CheckedItems)
             {
 
                 strhb += checkedItem.ToString()+",";
-
+                al.Add(checkedItem.ToString());
             }
-            strhb = strhb.TrimEnd(',');
+            //strhb = strhb.TrimEnd(',');
+            strhb = string.Join(",", al.ToArray()); 
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -56,7 +59,7 @@ namespace StudentRegiFormWinApp
         private void btn_save_Click(object sender, EventArgs e)
         {
             check_rdo();
-            if(rdotmp == 0)
+            if (rdotmp == 0)
             {
                 gen = "F";
             }
@@ -65,7 +68,7 @@ namespace StudentRegiFormWinApp
                 gen = "M";
             }
             check_hb();
-            cmd = new SqlCommand("INSERT INTO studs VALUES('"+txt_fname.Text+"','"+txt_sname.Text+"','"+gen+"','"+cmb_cast.SelectedItem+"','"+img_path+"','"+strhb+"')",conn);
+            cmd = new SqlCommand("INSERT INTO studs VALUES('"+txt_fname.Text+"','"+txt_sname.Text+"','"+gen+"','"+cmb_cast.SelectedItem+"','"+img_path+"','"+strhb+"')", conn);
             cmd.ExecuteNonQuery();
             MessageBox.Show("Record Inserted Successfully");
         }
@@ -83,32 +86,79 @@ namespace StudentRegiFormWinApp
             da = new SqlDataAdapter("SELECT * FROM studs WHERE s_id = "+txt_id.Text+"", conn);
             dt = new DataTable();
             da.Fill(dt);
-            txt_fname.Text = dt.Rows[0][1].ToString();
-            txt_sname.Text = dt.Rows[0][2].ToString();
-            string genres = dt.Rows[0][3].ToString();
-            if(genres == "M")
+            if (dt.Rows.Count > 0)
             {
-                rdo_m.Checked = true;
-            }
-            else
-            {
-                rdo_fe.Checked = true;
-            }
-            cmb_cast.DisplayMember = "s_cast";
-            cmb_cast.DataSource = dt;
-            cmb_cast.SelectedIndex = 0;
-            string gethb = dt.Rows[0][7].ToString().Split(',');
-            foreach ( in chkbl_hb.Items)
-            {
-                if ()
+                txt_fname.Text = dt.Rows[0][1].ToString();
+                txt_sname.Text = dt.Rows[0][2].ToString();
+                string genres = dt.Rows[0][3].ToString();
+                if (genres == "M")
                 {
-                    
+                    rdo_m.Checked = true;
                 }
                 else
                 {
-                    
+                    rdo_fe.Checked = true;
                 }
+                cmb_cast.Text = dt.Rows[0]["s_cast"].ToString();
+                string[] gethb = dt.Rows[0]["s_hobby"].ToString().Split(',');
+                for (int i = 0; i<chkbl_hb.Items.Count; i++)
+                {
+                    if (gethb.Contains(chkbl_hb.Items[i].ToString()))
+                    {
+                        chkbl_hb.SetItemChecked(i, true);
+                    }
+                }
+                string p_path = dt.Rows[0][5].ToString();
+                img_path = p_path;
+                pic_img.Load(p_path);
             }
+            else
+            {
+                MessageBox.Show("Data Doesn't Exist!");
+            }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            check_rdo();
+            if (rdotmp == 0)
+            {
+                gen = "F";
+            }
+            else
+            {
+                gen = "M";
+            }
+            check_hb();
+            cmd = new SqlCommand("UPDATE studs SET s_fname = '"+txt_fname.Text+"' ,s_sname = '"+txt_sname.Text+"' ,s_gender = '"+gen+"' ,s_cast = '"+cmb_cast.SelectedItem+"' ,s_img = '"+img_path+"' ,s_hobby = '"+strhb+"' WHERE s_id = "+txt_id.Text+"", conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Updated Successfully");
+        }
+
+        private void txt_id_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i<chkbl_hb.Items.Count; i++)
+            {
+                chkbl_hb.SetItemChecked(i, false);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            cmd = new SqlCommand("DELETE FROM studs WHERE s_id = "+txt_id.Text+"", conn);
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("Record Deleted Successfully");
+            txt_id.Text = "";
+            txt_fname.Text = "";
+            txt_sname.Text = "";
+            rdo_m.Checked = false;
+            rdo_fe.Checked = false;
+            for (int i = 0; i<chkbl_hb.Items.Count; i++)
+            {
+                chkbl_hb.SetItemChecked(i, false);
+            }
+            img_path = "";
+            pic_img.Image = null;
         }
     }
 }
