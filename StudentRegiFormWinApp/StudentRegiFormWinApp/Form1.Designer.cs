@@ -40,7 +40,7 @@
             this.txt_sname = new System.Windows.Forms.TextBox();
             this.txt_fname = new System.Windows.Forms.TextBox();
             this.txt_id = new System.Windows.Forms.TextBox();
-            this.r_f = new System.Windows.Forms.RadioButton();
+            this.rdo_fe = new System.Windows.Forms.RadioButton();
             this.rdo_m = new System.Windows.Forms.RadioButton();
             this.cmb_cast = new System.Windows.Forms.ComboBox();
             this.pic_img = new System.Windows.Forms.PictureBox();
@@ -60,6 +60,7 @@
             this.btn_search.TabIndex = 0;
             this.btn_search.Text = "Search";
             this.btn_search.UseVisualStyleBackColor = true;
+            this.btn_search.Click += new System.EventHandler(this.btn_search_Click);
             // 
             // btn_choose
             // 
@@ -168,17 +169,17 @@
             this.txt_id.Size = new System.Drawing.Size(150, 26);
             this.txt_id.TabIndex = 13;
             // 
-            // r_f
+            // rdo_fe
             // 
-            this.r_f.AutoSize = true;
-            this.r_f.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.r_f.Location = new System.Drawing.Point(185, 167);
-            this.r_f.Name = "r_f";
-            this.r_f.Size = new System.Drawing.Size(86, 24);
-            this.r_f.TabIndex = 14;
-            this.r_f.TabStop = true;
-            this.r_f.Text = "Female";
-            this.r_f.UseVisualStyleBackColor = true;
+            this.rdo_fe.AutoSize = true;
+            this.rdo_fe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdo_fe.Location = new System.Drawing.Point(185, 167);
+            this.rdo_fe.Name = "rdo_fe";
+            this.rdo_fe.Size = new System.Drawing.Size(86, 24);
+            this.rdo_fe.TabIndex = 14;
+            this.rdo_fe.TabStop = true;
+            this.rdo_fe.Text = "Female";
+            this.rdo_fe.UseVisualStyleBackColor = true;
             // 
             // rdo_m
             // 
@@ -275,7 +276,7 @@
             this.Controls.Add(this.pic_img);
             this.Controls.Add(this.cmb_cast);
             this.Controls.Add(this.rdo_m);
-            this.Controls.Add(this.r_f);
+            this.Controls.Add(this.rdo_fe);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.txt_fname);
             this.Controls.Add(this.txt_sname);
@@ -312,7 +313,7 @@
         private System.Windows.Forms.TextBox txt_sname;
         private System.Windows.Forms.TextBox txt_fname;
         private System.Windows.Forms.TextBox txt_id;
-        private System.Windows.Forms.RadioButton r_f;
+        private System.Windows.Forms.RadioButton rdo_fe;
         private System.Windows.Forms.RadioButton rdo_m;
         private System.Windows.Forms.ComboBox cmb_cast;
         private System.Windows.Forms.PictureBox pic_img;

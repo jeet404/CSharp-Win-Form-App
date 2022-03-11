@@ -77,5 +77,38 @@ namespace StudentRegiFormWinApp
             img_path = ofd.FileName;
             pic_img.Load(img_path);
         }
+
+        private void btn_search_Click(object sender, EventArgs e)
+        {
+            da = new SqlDataAdapter("SELECT * FROM studs WHERE s_id = "+txt_id.Text+"", conn);
+            dt = new DataTable();
+            da.Fill(dt);
+            txt_fname.Text = dt.Rows[0][1].ToString();
+            txt_sname.Text = dt.Rows[0][2].ToString();
+            string genres = dt.Rows[0][3].ToString();
+            if(genres == "M")
+            {
+                rdo_m.Checked = true;
+            }
+            else
+            {
+                rdo_fe.Checked = true;
+            }
+            cmb_cast.DisplayMember = "s_cast";
+            cmb_cast.DataSource = dt;
+            cmb_cast.SelectedIndex = 0;
+            string gethb = dt.Rows[0][7].ToString().Split(',');
+            foreach ( in chkbl_hb.Items)
+            {
+                if ()
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+            }
+        }
     }
 }
