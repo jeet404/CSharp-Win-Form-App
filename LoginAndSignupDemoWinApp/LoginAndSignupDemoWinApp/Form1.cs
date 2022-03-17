@@ -29,13 +29,16 @@ namespace LoginAndSignupDemoWinApp
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\userdb.mdf';Integrated Security=True");
-            conn.Open();
-            if(conn.State == ConnectionState.Open)
+            try
             {
-                lbl_stat.BackColor = Color.Green;
+                conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\WorkSpace\BCA SEM-4\C# Form App\LoginAndSignupDemoWinApp\LoginAndSignupDemoWinApp\userdb.mdf';Integrated Security=True");
+                conn.Open();
+                if (conn.State == ConnectionState.Open)
+                {
+                    lbl_stat.BackColor = Color.Green;
+                }
             }
-            else
+            catch (Exception ex)
             {
                 lbl_stat.BackColor = Color.Red;
             }
