@@ -9,4 +9,4 @@ C:\WorkSpace\BCA SEM-4\C# Form App\ConnectToOLEDBWinAPP\ConnectToOLEDBWinAPP\obj
 C:\WorkSpace\BCA SEM-4\C# Form App\ConnectToOLEDBWinAPP\ConnectToOLEDBWinAPP\obj\Debug\ConnectToOLEDBWinAPP.csproj.CoreCompileInputs.cache
 C:\WorkSpace\BCA SEM-4\C# Form App\ConnectToOLEDBWinAPP\ConnectToOLEDBWinAPP\obj\Debug\ConnectToOLEDBWinAPP.exe
 C:\WorkSpace\BCA SEM-4\C# Form App\ConnectToOLEDBWinAPP\ConnectToOLEDBWinAPP\obj\Debug\ConnectToOLEDBWinAPP.pdb
-C:\WorkSpace\BCA SEM-4\C# Form App\ConnectToOLEDBWinAPP\ConnectToOLEDBWinAPP\bin\Debug\Database1.accdb
+C:\WorkSpace\BCA SEM-4\C# Form App\ConnectToOLEDBWinAPP\ConnectToOLEDBWinAPP\obj\Debug\ConnectToOLEDBWinAPP.Form2.resources
