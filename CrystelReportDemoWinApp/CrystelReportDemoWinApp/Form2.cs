@@ -18,15 +18,10 @@ namespace CrystelReportDemoWinApp
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
-            this.reportViewer1.RefreshReport();
-            this.reportViewer1.RefreshReport();
-        }
-
-        private void btn_show_Click(object sender, EventArgs e)
-        {
+            this.crystalReportViewer1.RefreshReport();
+            this.crystalReportViewer1.RefreshReport();
             CrystalReport1 cr1 = new CrystalReport1();
-            reportViewer1.LocalReport.ReportPath = @"C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinApp\CrystalReport1.rpt";
+            crystalReportViewer1.ReportSource = cr1;
         }
     }
 }

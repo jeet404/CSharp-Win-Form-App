@@ -7,3 +7,5 @@ C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinA
 C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinApp\obj\x86\Debug\CrystelReportDemoWinApp.pdb
 C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinApp\obj\x86\Debug\CrystelReportDemoWinApp.csprojResolveAssemblyReference.cache
 C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinApp\obj\x86\Debug\CrystelReportDemoWinApp.Form2.resources
+C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinApp\bin\Debug\CrystelReportDemoWinApp.exe.config
+C:\WorkSpace\BCA SEM-4\C# Form App\CrystelReportDemoWinApp\CrystelReportDemoWinApp\bin\Debug\Database1.mdb
