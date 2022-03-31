@@ -1,0 +1,6 @@
+C:\WorkSpace\BCA SEM-4\C# Form App\TextboxMobileWinAapp\TextboxMobileWinAapp\bin\Debug\TextboxMobileWinAapp.dll
+C:\WorkSpace\BCA SEM-4\C# Form App\TextboxMobileWinAapp\TextboxMobileWinAapp\bin\Debug\TextboxMobileWinAapp.pdb
+C:\WorkSpace\BCA SEM-4\C# Form App\TextboxMobileWinAapp\TextboxMobileWinAapp\obj\Debug\TextboxMobileWinAapp.UserControl1.resources
+C:\WorkSpace\BCA SEM-4\C# Form App\TextboxMobileWinAapp\TextboxMobileWinAapp\obj\Debug\TextboxMobileWinApp.csproj.GenerateResource.Cache
+C:\WorkSpace\BCA SEM-4\C# Form App\TextboxMobileWinAapp\TextboxMobileWinAapp\obj\Debug\TextboxMobileWinAapp.dll
+C:\WorkSpace\BCA SEM-4\C# Form App\TextboxMobileWinAapp\TextboxMobileWinAapp\obj\Debug\TextboxMobileWinAapp.pdb
