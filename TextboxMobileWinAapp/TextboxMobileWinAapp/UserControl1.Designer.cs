@@ -33,6 +33,7 @@
             // 
             // txt_onlynum
             // 
+            this.txt_onlynum.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.txt_onlynum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_onlynum.Location = new System.Drawing.Point(6, 3);
             this.txt_onlynum.Name = "txt_onlynum";

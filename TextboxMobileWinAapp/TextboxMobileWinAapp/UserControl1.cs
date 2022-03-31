@@ -18,7 +18,7 @@ namespace TextboxMobileWinAapp
 
         private void txt_onlynum_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(e.KeyChar > 48 && e.KeyChar < 57 || e.KeyChar == 8))
+            if (!(e.KeyChar > 47 && e.KeyChar < 58 || e.KeyChar == 8))
             {
                 e.Handled = true;
             }
