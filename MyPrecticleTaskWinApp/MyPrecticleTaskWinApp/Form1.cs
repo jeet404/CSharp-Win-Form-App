@@ -17,6 +17,7 @@ namespace MyPrecticleTaskWinApp
         SqlCommand cmd;
         SqlDataAdapter da;
         DataTable dt;
+        DataTable dt2;
         string str_b;
         string str_f;
         RadioButton[] arrB = new RadioButton[3];
@@ -156,24 +157,32 @@ namespace MyPrecticleTaskWinApp
         private void btn_search_Click(object sender, EventArgs e)
         {
             da = new SqlDataAdapter("SELECT * FROM tbl_test WHERE id = "+txt_id.Text+"", conn);
-            dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            dt2 = new DataTable();
+            da.Fill(dt2);
+            if (dt2.Rows.Count > 0)
             {
-                txt_name.Text = dt.Rows[0][1].ToString();
-                txt_city.Text = dt.Rows[0][2].ToString();
-                for (int i = 0; i < arrB.Length; i++)
+                txt_name.Text = dt2.Rows[0][1].ToString();
+                txt_city.Text = dt2.Rows[0][2].ToString();
+                foreach (RadioButton r in arrB)
                 {
-                    if (arrB[i].Text == dt.Rows[0][3].ToString())
+                    r.CheckedChanged -= new EventHandler(this.rdo_b1_CheckedChanged);
+                }
+                foreach (RadioButton r in arrF)
+                {
+                    r.CheckedChanged -= new EventHandler(this.rdo_b1_CheckedChanged);
+                }
+                foreach (RadioButton j in arrB)
+                {
+                    if (j.Text == dt2.Rows[0][3].ToString())
                     {
-                        arrB[i].Checked = true;
+                        j.Checked = true;
                     }
                 }
-                for (int i = 0; i < arrF.Length; i++)
+                foreach (RadioButton i in arrF)
                 {
-                    if (arrF[i].Text == dt.Rows[0][4].ToString())
+                    if (i.Text == dt2.Rows[0][4].ToString())
                     {
-                        arrF[i].Checked = true;
+                        i.Checked = true;
                     }
                 }
             }
