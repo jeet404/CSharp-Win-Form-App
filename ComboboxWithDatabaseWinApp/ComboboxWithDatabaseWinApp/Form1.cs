@@ -25,7 +25,7 @@ namespace ComboboxWithDatabaseWinApp
         {
             try
             {
-                conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\WorkSpace\BCA SEM-4\C# Form App\ComboboxWithDatabaseWinApp\ComboboxWithDatabaseWinApp\world.mdf';Integrated Security=True");
+                conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\WorkSpace\CSharp-Win-Form-App\ComboboxWithDatabaseWinApp\ComboboxWithDatabaseWinApp\world.mdf;Integrated Security=True");
                 conn.Open();
                 if (conn.State == ConnectionState.Open)
                 {
